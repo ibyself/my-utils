@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的call/apply/bind()</title>
+</head>
+<body>
+    <script src="../dist/sun-utils.js"></script>
+    <script>
+        function fn(a,b){
+            console.log(a,b,this,arguments)
+        }
+        let obj={m:0}
+        myUtils.call(fn,obj,2,0)
+        myUtils.apply(fn,obj,[2,1])
+        myUtils.call(fn,null,2,2)
+        myUtils.bind(fn,obj,)(1,9)
+        myUtils.bind(fn,obj,1)(0,1)
+    </script>
+</body>
+</html>

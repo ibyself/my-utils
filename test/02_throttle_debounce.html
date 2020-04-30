@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数节流与防抖</title>
+</head>
+<body>
+    <button id="throttle">测试函数节流</button>
+    <button id="debounce">测试函数防抖</button>
+
+    <script src="../dist//sun-utils.js"></script>
+    <script>
+        function handleClick(event){
+            console.log('处理点击事件',this,event)
+        }
+
+        document.getElementById('throttle').onclick=myUtils.throttle(handleClick,2000)
+        document.getElementById('debounce').onclick=myUtils.debounce(handleClick,2000)
+    </script>
+    
+</body>
+</html>
